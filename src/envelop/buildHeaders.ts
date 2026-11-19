@@ -22,14 +22,10 @@ const _validateClientHeader = (args: any, extendContext: any): void => {
   }
 };
 
-const _createRequestId = (extendContext: any): void => {
-  const requestId = uuid();
-  extendContext({ requestId: requestId});
-};
-
 export const buildHeaders = (): Plugin<ContextType> => {
   return {
     onContextBuilding({context, extendContext}) {
+      const requestId = uuid();
       const clientHeader = context.request.headers.get(CLIENT_HEADER);
       if(!clientHeader) {
         throw new GraphQLError(`Header ${CLIENT_HEADER} is required.`, {
@@ -40,12 +36,12 @@ export const buildHeaders = (): Plugin<ContextType> => {
         })
       }
       extendContext({
+        requestId: requestId,
         clientHeader: clientHeader
       });
     },
     onExecute({args, extendContext }) {
       _validateClientHeader(args, extendContext);
-      _createRequestId(extendContext);
     },
   };
 };
