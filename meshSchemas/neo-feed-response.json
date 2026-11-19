@@ -1,0 +1,7 @@
+{
+  "type": "object",
+  "properties": {
+    "element_count": { "type": "integer" },
+    "near_earth_objects": { "type": "object", "additionalProperties": true }
+  }
+}

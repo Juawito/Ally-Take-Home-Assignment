@@ -6,11 +6,13 @@ import { buildHeaders } from './buildHeaders';
 import { useLogger } from './useLogger';
 import { appendMetadata } from './appendMetadata';
 import { ContextType } from '../types';
+import { useMeshSDK } from './useMeshSdk';
 
 const plugins: Plugin<ContextType>[] = [
   useEngine({ parse, validate, specifiedRules, execute, subscribe }) as Plugin<ContextType>,
   buildHeaders(),
   useLogger(),
+  useMeshSDK(),
   appendMetadata(),
   useParserCache() as Plugin<ContextType>,
   useValidationCache() as Plugin<ContextType>,

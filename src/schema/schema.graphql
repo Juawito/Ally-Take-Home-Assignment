@@ -6,6 +6,7 @@ input AddressInput {
 }
 type Query {
   address(username: String!): Address
+  nearEarthObjects(startDate: String!, endDate: String!): NearEarthObjectFeed
 }
 
 type Mutation {
