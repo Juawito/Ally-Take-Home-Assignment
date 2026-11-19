@@ -10,6 +10,11 @@ export type Addresses = {
   [key: string]: Address;
 };
 
-export type Args = {
+export type GetAddressArgs = {
   username: string;
+};
+
+export type CreateAddressArgs = {
+  username: string;
+  address: Address;
 };

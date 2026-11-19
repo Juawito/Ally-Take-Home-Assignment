@@ -1,3 +1,13 @@
+input AddressInput {
+  street: String
+  city: String
+  zipcode: String
+  state: String
+}
 type Query {
   address(username: String!): Address
+}
+
+type Mutation {
+  address(username: String!, address: AddressInput): Address
 }

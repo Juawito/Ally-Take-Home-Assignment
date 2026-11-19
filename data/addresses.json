@@ -8,5 +8,11 @@
     "street": "234 Other St",
     "city": "Townville",
     "zipcode": "32145"
+  },
+  "Wito": {
+    "street": "123 Blecker ST",
+    "city": "Smallville",
+    "zipcode": "12345",
+    "state": "Nebraska"
   }
 }
