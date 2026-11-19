@@ -60,7 +60,9 @@ You're tasked with 7 tickets this sprint. 5 of the tickets are enhancements, one
 ### Things to think about
 
 - How can you ensure graph schema types and typescript types match?
-- How can you return a consistent user friendly error message for all resolvers?
+Libraries and tools exist that can perform such task and compile/check those.
+- How can you return a consistent user friendly error message for all resolvers? 
+For now use of the build in GraphQLError type is most favorable, if custom error is need - extending or creating a new error type can be explored.
 - How would you nest this address object inside a larger schema object containing other elements specific to a user?
 - How can you make sure you are not duplicating an implementation in every resolver? Tip: read about envelop in the resources below
 
